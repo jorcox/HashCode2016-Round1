@@ -41,12 +41,13 @@ public class ProblemCtx {
 			int[] whPos = new int[]{Integer.parseInt(currentLine.get(0)), Integer.parseInt(currentLine.get(1))};
 			currentLine = FileManager.split(f.readNextLine());
 			String[] currLine = new String[currentLine.size()];
-			for(int j = 0; j < warehouses.length; j++){
-				warehouses[j] = new Warehouse(currentLine.toArray(currLine), itemTypes);
-			}
+			warehouses[i] = new Warehouse(currentLine.toArray(currLine), itemTypes);
 		}
 		// orders
 		currentLine = FileManager.split(f.readNextLine());
 		orders = new Order[Integer.parseInt(currentLine.get(0))];
+		for(int i=0; i<orders.length; i++){
+			
+		}
 	}
 }
