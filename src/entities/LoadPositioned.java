@@ -1,5 +1,6 @@
 package entities;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class LoadPositioned {
@@ -7,9 +8,12 @@ public class LoadPositioned {
 	private Map<ItemType, Integer> load;
 	private int[] pos;
 	
-	public LoadPositioned(){}
+	public LoadPositioned(){
+		load = new HashMap<ItemType, Integer>();
+	}
 	
 	public LoadPositioned(String[] load, ItemType[] itemTypes){
+		this.load = new HashMap<ItemType, Integer>();
 		for(int i = 0; i < load.length; i++){
 			this.getLoad().put(itemTypes[i], Integer.parseInt(load[i]));
 		}
