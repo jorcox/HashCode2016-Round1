@@ -42,4 +42,11 @@ public class LoadPositioned {
 	public Map<ItemType, Integer> getLoad(){
 		return load;
 	}
+	public int getWeightload(){
+		int tamano=0;
+		for (ItemType itemType : load.keySet()){
+			tamano+=itemType.getWeigh()*load.get(itemType);
+		}
+		return tamano;
+	}
 }
