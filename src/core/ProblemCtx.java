@@ -18,7 +18,6 @@ public class ProblemCtx {
 	 * args[0] => input path
 	 */
 	public static void main(String[] args){
-		System.out.println(args[0]);
 		FileManager f = new FileManager(args[0]);
 		List<String> currentLine;
 		// generic
@@ -44,7 +43,7 @@ public class ProblemCtx {
 			currentLine = FileManager.split(f.readNextLine());
 			String[] currLine = new String[currentLine.size()];
 			currentLine.toArray(currLine);
-			warehouses[i] = new Warehouse(currLine, itemTypes);
+			warehouses[i] = new Warehouse(i, currLine, itemTypes);
 			warehouses[i].setPos(whPos[0], whPos[1]);
 		}
 		// orders
@@ -57,7 +56,7 @@ public class ProblemCtx {
 			String[] currLine = new String[Integer.parseInt(currentLine.get(0))];
 			currentLine = FileManager.split(f.readNextLine());
 			currentLine.toArray(currLine);
-			orders[i] = new Order(currLine, itemTypes);
+			orders[i] = new Order(i, currLine, itemTypes);
 			orders[i].setPos(orderPos[0], orderPos[1]);
 		}
 		
