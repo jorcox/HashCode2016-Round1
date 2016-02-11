@@ -33,7 +33,7 @@ public class FileManager {
 	public String readNextLine(){
 		try {
 			String res = br.readLine();
-			System.out.println(res);
+			//System.out.println(res);
 			return res;
 		} catch (IOException e) {
 			e.printStackTrace();

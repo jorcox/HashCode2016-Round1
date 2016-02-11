@@ -60,5 +60,32 @@ public class ProblemCtx {
 			orders[i] = new Order(currLine, itemTypes);
 			orders[i].setPos(orderPos[0], orderPos[1]);
 		}
+		
+		printProblem();
+	}
+	
+	public static void printProblem(){
+		System.out.println("MAP: " + map[0] + "x" + map[1]);
+		System.out.println("DRONES: " + drones.length);
+		System.out.println("MAX TURNS: " + maxTurns);
+		System.out.println("MAX PAYLOAD: " + maxPayload);
+		System.out.println("PRODUCT TYPES: ");
+		for(ItemType i : itemTypes){
+			System.out.println("Id: " + i.getId() + "; Weigh: " + i.getWeigh());
+		}
+		System.out.println("WAREHOUSES: ");
+		for(Warehouse w : warehouses){
+			System.out.println("Location at: [" + w.getX() + ", " + w.getY() + "]");
+			for(ItemType it : w.getLoad().keySet()){
+				System.out.println("Item: " + it.getId() + "; Load: " + w.getLoad().get(it));
+			}
+		}
+		System.out.println("ORDERS");
+		for(Order o : orders){
+			System.out.println("Deliver to: [" + o.getX() + ", " + o.getY() + "]");
+			for(ItemType it : o.getLoad().keySet()){
+				System.out.println("Item: " + it.getId() + "; Load: " + o.getLoad().get(it));
+			}
+		}
 	}
 }
