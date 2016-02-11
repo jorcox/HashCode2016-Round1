@@ -6,8 +6,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -34,19 +32,12 @@ public class FileManager {
 	
 	public String readNextLine(){
 		try {
-			return br.readLine();
+			String res = br.readLine();
+			//System.out.println(res);
+			return res;
 		} catch (IOException e) {
 			e.printStackTrace();
 			return "";
-		}
-	}
-	
-	public byte[] readAllBytes(){
-		try {
-			return Files.readAllBytes(Paths.get(filePath));
-		} catch (IOException e) {
-			e.printStackTrace();
-			return new byte[0];
 		}
 	}
 	
@@ -58,6 +49,7 @@ public class FileManager {
 		while(s.hasNext()){
 			res.add(s.next());
 		}
+		s.close();
 		
 		return res;
 	}
