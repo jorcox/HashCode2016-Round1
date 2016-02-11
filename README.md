@@ -7,4 +7,4 @@ Project developed by:
 * [Íñigo Alonso Ruiz](https://github.com/Shathe)
 * [Jorge Cáncer Gil](https://github.com/jorcox)
 
-Chosen language: Java
+Chosen language: Java (1.8)
