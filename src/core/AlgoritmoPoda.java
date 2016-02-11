@@ -12,9 +12,12 @@ import entities.Warehouse;
 public class AlgoritmoPoda {
 
 	public static void poda(Drone[] drones, Warehouse[] warehouses, Order[] orders, int MaxPayload) {
-		HashMap<Integer, Integer> costes = new HashMap();
+		HashMap<Integer, Integer> costes = new HashMap<Integer, Integer>();
 		int siguienteDron = 0;
 
+		for (int i = 0; i < drones.length; i++){
+			costes.put(i, 0);
+		}
 		// realizas busqueda en arbol atendiendo priemro a un pedido en concreto
 		// los drones se turnaran segun se vaya haciendo la profundidad
 		for (int i = 0; i < orders.length; i++) {
@@ -65,9 +68,9 @@ public class AlgoritmoPoda {
 		ArrayList<Warehouse> WarVistas= new ArrayList();
 		int distancia=0;
 		boolean cabe=true;
-		while (cabe ) {
+		while (cabe && WarVistas.size() < warehouses.length) {
 			Warehouse whareMasCercana = WhareMasCercana(warehouses, order,WarVistas);
-			distancia+=distancia(whareMasCercana.getPos(), order.getPos());
+			distancia+=distancia(whareMasCercana.getPos(),order.getPos());
 			WarVistas.add(whareMasCercana);
 			Map<ItemType, Integer> load = whareMasCercana.getLoad();
 

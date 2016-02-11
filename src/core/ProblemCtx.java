@@ -61,7 +61,8 @@ public class ProblemCtx {
 			orders[i].setPos(orderPos[0], orderPos[1]);
 		}
 		
-		printProblem();
+		AlgoritmoPoda.poda(drones, warehouses, orders, maxPayload);
+		//printProblem();
 	}
 	
 	public static void printProblem(){
