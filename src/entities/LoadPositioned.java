@@ -9,6 +9,12 @@ public class LoadPositioned {
 	
 	public LoadPositioned(){}
 	
+	public LoadPositioned(String[] load, ItemType[] itemTypes){
+		for(int i = 0; i < load.length; i++){
+			this.getLoad().put(itemTypes[i], Integer.parseInt(load[i]));
+		}
+	}
+	
 	public void setPos(int x, int y){
 		this.pos = new int[]{x, y};
 	}
